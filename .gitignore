@@ -33,5 +33,6 @@ build/
 .vscode/
 
 # Docker-specific
-project-b/.env
-project-a/.env
+data-api/.env
+auth-api/.env
+.env
