@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-process-logs-table
+      author: coder
+      changes:
+        - createTable:
+            tableName: process_logs
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_process_logs_user
+                    referencedTableName: users
+                    referencedColumnNames: id
+              - column:
+                  name: input_text
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: output_text
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: datetime
+                  constraints:
+                    nullable: false
